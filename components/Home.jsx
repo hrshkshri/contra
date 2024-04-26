@@ -1,10 +1,9 @@
 import React from 'react'
+import EmailComponent from './EmailComponent'
 
 const Home = () => {
   return (
-    <div>
-      Hello World from Home
-    </div>
+    <EmailComponent />
   )
 }
 
