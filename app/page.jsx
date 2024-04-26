@@ -1,4 +1,4 @@
-import Home from "@/components/Home";
+import Home from "@/components/home/Home";
 import { Link } from "@chakra-ui/react";
 
 

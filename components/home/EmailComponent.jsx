@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Input, Link } from 
 import { Icon } from '@iconify/react'
 import React, { useState } from 'react'
 
-const EmailComponent = () => {
+const EmailComponent = ({ onContinue, onEmailUpdate }) => {
     const [email, setEmail] = useState('');
     const [isEmailValid, setIsEmailValid] = useState(false);
     const validateEmail = (email) => {
@@ -51,6 +51,10 @@ const EmailComponent = () => {
                 rounded="3xl"
                 bgColor={isEmailValid ? 'black' : 'gray.300'}
                 color={'white'}
+                onClick={() => {
+                    isEmailValid && onContinue();
+                    onEmailUpdate(email);
+                }}
             >
                 Continue
             </Button>
