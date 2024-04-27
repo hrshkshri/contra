@@ -1,6 +1,6 @@
 "use client";
 import { Button, Input, Text } from '@chakra-ui/react'
-import { Select, SelectSection, SelectItem } from "@nextui-org/react";
+import { Icon } from '@iconify/react';
 import React from 'react'
 
 const StepTwo = () => {
@@ -27,33 +27,35 @@ const StepTwo = () => {
       </div>
       <div>
         <Text className='text-sm font-bold p-1'>Hourly rate</Text>
-        <div className="flex w-full flex-nowrap gap-4">
-          <Select
-            label="Select your hourly rate"
-            className="w-full border-2 border-gray-300"
-          >
-            {animals.map((animal) => (
-              <SelectItem key={animal.value} value={animal.value}
-              className='bg-white size-sm'
-              >
-                {animal.label}
-              </SelectItem>
-            ))}
-          </Select>
-        </div>
+        <Input
+          focusBorderColor='gray.300' type='email' placeholder='Select your hourly rate' padding={6}
+        />
       </div>
-      <Button
-        size='xl'
-        height='48px'
-        width='30%'
-        border='1px'
-        rounded="3xl"
-        bgColor={'black'}
-        color={'white'}
-        _hover={{ bgColor: 'gray.700' }}
-      >
-        Continue
-      </Button>
+      <div className='flex flex-row space-x-3 py-3'>
+        <Button
+          size='xl'
+          height='48px'
+          width='10%'
+          border='1px'
+          rounded="full"
+          bgColor={'white'}
+          color={'gray.300'}
+        >
+          <Icon icon="uiw:left" color='black' />
+        </Button>
+        <Button
+          size='xl'
+          height='48px'
+          width='30%'
+          border='1px'
+          rounded="3xl"
+          bgColor={'black'}
+          color={'white'}
+          _hover={{ bgColor: 'gray.700' }}
+        >
+          Continue
+        </Button>
+      </div>
     </div>
   )
 }
