@@ -24,3 +24,10 @@
 .select-rate .css-j93siq {
   padding: 11px 6px !important;
 }
+
+@media (max-width: 1024px) {
+  /* Adjust breakpoint as needed */
+  .hidden {
+    display: none !important;
+  }
+}

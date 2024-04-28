@@ -1,0 +1,8 @@
+@media (min-width: 1024px) {
+  .custom-background {
+    background-image: url("https://builds.contra.com/c138bbb2/assets/static/background.Dg9zT2Nv.webp");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+}
