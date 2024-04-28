@@ -1,7 +1,7 @@
 import { Button, Input } from '@chakra-ui/react'
 import React from 'react'
 
-const StepOne = () => {
+const StepOne = ({ nextStep }) => {
     return (
         <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
             {/* eslint-disable-next-line */}
@@ -25,6 +25,7 @@ const StepOne = () => {
                 bgColor={'black'}
                 color={'white'}
                 _hover={{ bgColor: 'gray.700' }}
+                onClick={nextStep}
             >
                 Continue
             </Button>

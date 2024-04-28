@@ -3,7 +3,7 @@ import { Button, Input, Text } from '@chakra-ui/react'
 import { Icon } from '@iconify/react';
 import React from 'react'
 
-const StepTwo = () => {
+const StepTwo = ({ prevStep, nextStep }) => {
 
   const animals = [
     { value: "dog", label: "Dog" },
@@ -40,6 +40,7 @@ const StepTwo = () => {
           rounded="full"
           bgColor={'white'}
           color={'gray.300'}
+          onClick={prevStep}
         >
           <Icon icon="uiw:left" color='black' />
         </Button>
@@ -52,6 +53,7 @@ const StepTwo = () => {
           bgColor={'black'}
           color={'white'}
           _hover={{ bgColor: 'gray.700' }}
+          onClick={nextStep}
         >
           Continue
         </Button>

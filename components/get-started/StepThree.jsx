@@ -3,7 +3,7 @@ import { Button, Input, Text } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
 import React from 'react'
 
-const StepThree = () => {
+const StepThree = ({ prevStep, nextStep }) => {
     return (
         <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
             <h1 className='font-semibold text-3xl'>Where are you located?</h1>
@@ -21,6 +21,7 @@ const StepThree = () => {
                     rounded="full"
                     bgColor={'white'}
                     color={'gray.300'}
+                    onClick={prevStep}
                 >
                     <Icon icon="uiw:left" color='black' />
                 </Button>
@@ -33,6 +34,7 @@ const StepThree = () => {
                     bgColor={'black'}
                     color={'white'}
                     _hover={{ bgColor: 'gray.700' }}
+                    onClick={nextStep}
                 >
                     Continue
                 </Button>

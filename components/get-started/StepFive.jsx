@@ -11,7 +11,7 @@ const socialMediaIcons = {
     "instagram": "akar-icons:instagram-fill"
 };
 
-const StepFive = () => {
+const StepFive = ({ prevStep }) => {
 
     const [socialLinks, setSocialLinks] = useState([]);
     const [newLink, setNewLink] = useState('');
@@ -42,7 +42,7 @@ const StepFive = () => {
                     <>
 
                         {
-                            socialLinks.map((link, index) => (
+                            socialLinks.map((link) => (
                                 <>
                                     <div key={link.name} className='flex flex-row space-x-4 w-full justify-start items-center'>
                                         <Icon icon="ph:dots-six-vertical" width={30} color='grey' />
@@ -140,6 +140,7 @@ const StepFive = () => {
                     rounded="full"
                     bgColor={'white'}
                     color={'gray.300'}
+                    onClick={prevStep}
                 >
                     <Icon icon="uiw:left" color='black' />
                 </Button>

@@ -3,7 +3,7 @@ import { Button, Input, Text } from '@chakra-ui/react';
 import { Icon } from '@iconify/react';
 import React from 'react'
 
-const StepFour = () => {
+const StepFour = ({ prevStep, nextStep }) => {
     return (
         <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
             <div className='flex flex-col space-y-2'>
@@ -30,6 +30,7 @@ const StepFour = () => {
                     rounded="full"
                     bgColor={'white'}
                     color={'gray.300'}
+                    onClick={prevStep}
                 >
                     <Icon icon="uiw:left" color='black' />
                 </Button>
@@ -42,6 +43,7 @@ const StepFour = () => {
                     bgColor={'black'}
                     color={'white'}
                     _hover={{ bgColor: 'gray.700' }}
+                    onClick={nextStep}
                 >
                     Continue
                 </Button>

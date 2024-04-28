@@ -5,7 +5,7 @@ import { Box, Image, Img } from '@chakra-ui/react'
 const BaseComponent = ({ children }) => {
     return (
         <>
-            <Box className='bg-white rounded-3xl container'
+            <Box className='bg-white rounded-3xl w-3/4 h-4/5'
             >
                 <div className='p-5'>
                     <Image src='/logo.svg' alt='logo' width={150} />
