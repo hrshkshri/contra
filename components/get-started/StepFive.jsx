@@ -30,6 +30,11 @@ const StepFive = ({ prevStep }) => {
         setNewLinkName('');
     }
 
+    const handleDeleteLink = (link) => {
+        const updatedLinks = socialLinks.filter((l) => l.name !== link.name);
+        setSocialLinks(updatedLinks);
+    }
+
     return (
         <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
             <div className='flex flex-col space-y-2'>
@@ -53,7 +58,11 @@ const StepFive = ({ prevStep }) => {
                                             </div>
                                             <div className='flex flex-row space-x-2 items-center'>
                                                 <Icon icon="clarity:pencil-line" width={30} />
-                                                <Icon icon="fluent:delete-28-regular" width={30} />
+                                                <Icon icon="fluent:delete-28-regular" width={30} className='cursor-pointer' onClick={() => {
+                                                    console.log('Delete button clicked');
+                                                    handleDeleteLink(link);
+                                                }}
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -97,9 +106,6 @@ const StepFive = ({ prevStep }) => {
                 )
             }
 
-
-
-
             {showInputs && (
                 <>
                     <div className='flex flex-col space-y-4'>
@@ -112,22 +118,45 @@ const StepFive = ({ prevStep }) => {
                             onChange={(e) => setNewLinkName(e.target.value)}
                         />
                     </div>
-                    <Button
-                        border='1px'
-                        color={'black'}
-                        rounded="full"
-                        padding={6}
-                        bgColor={'white'}
-                        width='30%'
-                        height='40px'
-                        onClick={() => {
-                            toggleInputsAndSocialLinks();
-                            handleSaveNewLink();
-                            console.log('Save button clicked');
-                        }}
-                    >
-                        Save
-                    </Button>
+                    <div className='flex flex-row space-x-3 py-3 items-center'>
+
+                        {
+                            socialLinks.length > 0 && (
+
+                                <Button
+                                    border='1px'
+                                    color={'black'}
+                                    rounded="full"
+                                    padding={5}
+                                    bgColor={'white'}
+                                    width='25%'
+                                    height='40px'
+                                    onClick={() => {
+                                        toggleInputsAndSocialLinks();
+                                        console.log('Cancel button clicked');
+                                    }}
+                                >
+                                    Cancel
+                                </Button>
+                            )}
+                        <Button
+                            border='1px'
+                            color={'black'}
+                            rounded="full"
+                            padding={5}
+                            bgColor={'white'}
+                            width='25%'
+                            height='40px'
+                            onClick={() => {
+                                toggleInputsAndSocialLinks();
+                                handleSaveNewLink();
+                                console.log('Save button clicked');
+                            }}
+                        >
+                            Save
+                        </Button>
+                    </div>
+
                 </>
             )
             }
