@@ -15,7 +15,7 @@ const OtpComponent = ({ email }) => {
     }, [enteredOTP, router]);
 
     return (
-        <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
+        <div className='flex flex-col space-y-5 mx-8'>
             <h1 className='font-semibold text-3xl'>We emailed you a code</h1>
             <p>Enter the verification code sent to:</p>
             <p className='flex items-center justify-center'>

@@ -2,10 +2,12 @@
 import { Button, Input, Text } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
 import React from 'react'
+import ContinueButton from './utilityComponent/ContinueButton';
 
 const StepThree = ({ prevStep, nextStep }) => {
     return (
-        <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
+        <div className='flex flex-col space-y-5 mx-8'>
+            <Icon icon="uiw:left" color='black' className='cursor-pointer lg:hidden' onClick={prevStep} />
             <h1 className='font-semibold text-3xl'>Where are you located?</h1>
             <div>
                 <Input
@@ -25,19 +27,7 @@ const StepThree = ({ prevStep, nextStep }) => {
                 >
                     <Icon icon="uiw:left" color='black' />
                 </Button>
-                <Button
-                    size='xl'
-                    height='48px'
-                    width='30%'
-                    border='1px'
-                    rounded="3xl"
-                    bgColor={'black'}
-                    color={'white'}
-                    _hover={{ bgColor: 'gray.700' }}
-                    onClick={nextStep}
-                >
-                    Continue
-                </Button>
+                <ContinueButton nextStep={nextStep} />
             </div>
         </div>
     )

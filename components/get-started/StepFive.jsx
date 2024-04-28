@@ -3,6 +3,7 @@
 import { Button, Divider, Input, Text } from '@chakra-ui/react'
 import { Icon } from '@iconify/react';
 import React, { useState } from 'react'
+import ContinueButton from './utilityComponent/ContinueButton';
 
 
 const socialMediaIcons = {
@@ -36,7 +37,8 @@ const StepFive = ({ prevStep }) => {
     }
 
     return (
-        <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
+        <div className='flex flex-col space-y-5 mx-8'>
+            <Icon icon="uiw:left" color='black' className='cursor-pointer lg:hidden' onClick={prevStep} />
             <div className='flex flex-col space-y-2'>
                 <h1 className='font-semibold text-3xl'>Add social links</h1>
                 <Text className='text-md font'>Confirm your identity by adding one or more social links.</Text>
@@ -173,18 +175,7 @@ const StepFive = ({ prevStep }) => {
                 >
                     <Icon icon="uiw:left" color='black' />
                 </Button>
-                <Button
-                    size='xl'
-                    height='48px'
-                    width='30%'
-                    border='1px'
-                    rounded="3xl"
-                    bgColor={'black'}
-                    color={'white'}
-                    _hover={{ bgColor: 'gray.700' }}
-                >
-                    Continue
-                </Button>
+                <ContinueButton />
             </div>
         </div>
     )

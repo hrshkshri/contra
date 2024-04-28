@@ -10,7 +10,7 @@ const EmailComponent = ({ onContinue, onEmailUpdate }) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
     return (
-        <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
+        <div className='flex flex-col space-y-5 mx-8'>
             <Breadcrumb className='pt-4'>
                 <BreadcrumbItem>
                     <BreadcrumbLink className='flex items-center justify-center'>

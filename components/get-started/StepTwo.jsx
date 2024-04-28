@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { Select } from 'chakra-react-select';
 import React from 'react'
 import './StepTwo.css'
+import ContinueButton from './utilityComponent/ContinueButton';
 
 const StepTwo = ({ prevStep, nextStep }) => {
 
@@ -25,7 +26,8 @@ const StepTwo = ({ prevStep, nextStep }) => {
   ];
 
   return (
-    <div className='flex flex-col space-y-5 py-9 px-10 mx-8'>
+    <div className='flex flex-col space-y-5 mx-8'>
+      <Icon icon="uiw:left" color='black' className='cursor-pointer lg:hidden' onClick={prevStep}/>
       {/* eslint-disable-next-line */}
       <h1 className='font-semibold text-3xl'>What do you do?</h1>
       <div>
@@ -54,7 +56,7 @@ const StepTwo = ({ prevStep, nextStep }) => {
           selectedOptionStyle='color'
           selectedOptionColorScheme='gray.500'
           size={'lg'}
-          focusBorderColor='gray.300' placeholder='Select your hourly rate' padding={10}
+          focusBorderColor='gray.300' placeholder='Select your hourly rate' padding={6}
           options={rate}
         />
       </div>
@@ -68,22 +70,11 @@ const StepTwo = ({ prevStep, nextStep }) => {
           bgColor={'white'}
           color={'gray.300'}
           onClick={prevStep}
+          className='hidden'
         >
           <Icon icon="uiw:left" color='black' />
         </Button>
-        <Button
-          size='xl'
-          height='48px'
-          width='30%'
-          border='1px'
-          rounded="3xl"
-          bgColor={'black'}
-          color={'white'}
-          _hover={{ bgColor: 'gray.700' }}
-          onClick={nextStep}
-        >
-          Continue
-        </Button>
+        <ContinueButton nextStep={nextStep} />
       </div>
     </div>
   )
